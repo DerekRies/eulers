@@ -34,10 +34,36 @@ def pythag_3s(max_c):
         break
 
 
-def triangle_numbers():
+def fib_numbers(max_length=0):
+  fs1 = 1
+  fs2 = 1
+  i = 2
+  yield fs1
+  yield fs2
+  while i < max_length or not bool(max_length):
+    i += 1
+    temp = fs1
+    fs1 += fs2
+    fs2 = temp
+    yield fs1
+
+
+def triangle_numbers(max_length=0):
   n = 0
   i = 0
-  while True:
+  while i < max_length or not bool(max_length):
     i += 1
     n += i
     yield n
+
+def pent_numbers(max_length=0):
+  n = 0
+  while n < max_length or not bool(max_length):
+    n += 1
+    yield int((n * ((3 * n) - 1)) / 2)
+
+def hex_numbers(max_length=0):
+  n = 0
+  while n < max_length or not bool(max_length):
+    n += 1
+    yield int(((2 * n) - 1) * n)
